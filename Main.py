@@ -3,12 +3,14 @@ from tkinter import ttk
 from selenium.webdriver.support.ui import Select
 from selenium import webdriver
 from time import sleep
+import os
 
 
 username = 'Test Bot'
 
 url = 'URL GOES HERE'
-driver = webdriver.Firefox(executable_path='%PATH TO GECKODRIVER%')
+workingdir = os.getcwd()
+driver = webdriver.Firefox(executable_path=workingdir+"\Resources\geckodriver.exe")
 driver.get(url)
 
 box = driver.find_element_by_name('username')
